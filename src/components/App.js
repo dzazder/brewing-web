@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Navbar from './Navbar.js';
+import { withTranslation, Trans } from 'react-i18next';
 
 class App extends Component {
 
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -18,11 +20,13 @@ class App extends Component {
             <Navbar />
 
             <div id="content">
-                <h1>Hello world!</h1>
+                <Trans i18nKey="app.title">
+                    Tytuł
+                </Trans>
             </div>
           </div>
         );
       }
 }
 
-export default App;
+export default withTranslation()(App);
